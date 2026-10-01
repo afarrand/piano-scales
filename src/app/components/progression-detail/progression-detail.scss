@@ -84,3 +84,21 @@
   font-weight: 700;
   color: #aaa;
 }
+
+@media print {
+  .detail-nav {
+    display: none;
+  }
+
+  .step-list {
+    display: block;
+  }
+
+  .step-card {
+    display: inline-block;
+    width: calc(50% - 1rem);
+    margin: 0 0.5rem 1rem;
+    vertical-align: top;
+    break-inside: avoid;
+  }
+}

@@ -26,4 +26,8 @@ export class ProgressionDetail {
     const progressionChords = progression.degrees.map((degree) => chords[degree - 1]);
     return chooseLowMovementVoicings(progressionChords);
   });
+
+  print(): void {
+    window.print();
+  }
 }

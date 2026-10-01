@@ -20,4 +20,8 @@ export class NotePage {
     () => NOTE_NAMES[(this.noteIndex() + NOTE_NAMES.length - 1) % NOTE_NAMES.length],
   );
   readonly nextNote = computed(() => NOTE_NAMES[(this.noteIndex() + 1) % NOTE_NAMES.length]);
+
+  print(): void {
+    window.print();
+  }
 }
