@@ -1,0 +1,86 @@
+.detail-nav {
+  max-width: 900px;
+  margin: 0 auto 1.5rem;
+
+  a {
+    color: #333;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.progression-header {
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+  text-align: center;
+
+  h1 {
+    margin-bottom: 0.25rem;
+  }
+
+  .roman {
+    font-weight: 700;
+    color: #888;
+    margin: 0 0 0.5rem;
+  }
+
+  .description {
+    color: #555;
+    margin: 0 0 0.75rem;
+  }
+
+  .hint {
+    font-size: 0.85rem;
+    color: #777;
+    font-style: italic;
+  }
+}
+
+.step-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.25rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.step-card {
+  position: relative;
+  width: 260px;
+  background: #fafafa;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+
+  h2 {
+    margin: 0.25rem 0 0;
+    font-size: 1.3rem;
+  }
+
+  .roman-small {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #888;
+  }
+
+  .voicing-label {
+    margin: 0.1rem 0 0.6rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #555;
+  }
+}
+
+.step-index {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #aaa;
+}

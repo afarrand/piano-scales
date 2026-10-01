@@ -1,0 +1,34 @@
+@if (label()) {
+  <p class="diagram-label">{{ label() }}</p>
+}
+<div class="piano">
+  <div class="white-keys">
+    @for (key of whiteKeys(); track key.note + key.octave) {
+      <div
+        class="key white"
+        [class.highlight]="key.fingers !== null"
+        [style.width.%]="key.widthPercent"
+      >
+        @if (key.fingers !== null) {
+          <span class="finger finger-right" title="Right hand">{{ key.fingers.rightFinger }}</span>
+          <span class="finger finger-left" title="Left hand">{{ key.fingers.leftFinger }}</span>
+        }
+      </div>
+    }
+  </div>
+  <div class="black-keys">
+    @for (key of blackKeys(); track key.note + key.octave) {
+      <div
+        class="key black"
+        [class.highlight]="key.fingers !== null"
+        [style.left.%]="key.leftPercent"
+        [style.width.%]="key.widthPercent"
+      >
+        @if (key.fingers !== null) {
+          <span class="finger finger-right" title="Right hand">{{ key.fingers.rightFinger }}</span>
+          <span class="finger finger-left" title="Left hand">{{ key.fingers.leftFinger }}</span>
+        }
+      </div>
+    }
+  </div>
+</div>

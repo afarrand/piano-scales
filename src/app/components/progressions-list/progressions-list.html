@@ -1,0 +1,19 @@
+<nav class="note-nav">
+  <a routerLink="/">&larr; All notes</a>
+  <div class="note-switch">
+    <a [routerLink]="['/progressions', previousNote()]">&laquo; {{ previousNote() }}</a>
+    <h1>Popular Progressions in {{ note() }}</h1>
+    <a [routerLink]="['/progressions', nextNote()]">{{ nextNote() }} &raquo;</a>
+  </div>
+</nav>
+
+<div class="progression-list">
+  @for (progression of progressions; track progression.id) {
+    <a class="progression-card" [routerLink]="['/progressions', note(), progression.id]">
+      <h2>{{ progression.name }}</h2>
+      <p class="roman">{{ progression.romanLabel }}</p>
+      <p class="description">{{ progression.description }}</p>
+    </a>
+  }
+</div>
+

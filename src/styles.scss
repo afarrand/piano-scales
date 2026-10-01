@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family:
+    'Segoe UI',
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+  background: #f4f4f4;
+  color: #222;
+}
+
+.app-shell {
+  padding: 1.5rem 1rem 3rem;
+}
+

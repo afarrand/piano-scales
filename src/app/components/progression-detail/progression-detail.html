@@ -1,0 +1,30 @@
+<nav class="detail-nav">
+  <a [routerLink]="['/progressions', note()]">&larr; Popular progressions in {{ note() }}</a>
+</nav>
+
+@if (progression(); as progression) {
+  <header class="progression-header">
+    <h1>{{ progression.name }}</h1>
+    <p class="roman">{{ progression.romanLabel }} in {{ note() }} major</p>
+    <p class="description">{{ progression.description }}</p>
+    <p class="hint">
+      The fingering below is chosen to minimize hand movement between chords -
+      follow the sequence left to right.
+    </p>
+  </header>
+
+  <div class="step-list">
+    @for (step of steps(); track $index) {
+      <article class="step-card">
+        <div class="step-index">{{ $index + 1 }}</div>
+        <h2>{{ step.chord.name }}</h2>
+        <p class="roman-small">{{ step.chord.roman }}</p>
+        <p class="voicing-label">{{ step.voicing.label }}</p>
+        <app-piano-diagram [notes]="step.voicing.notes" />
+      </article>
+    }
+  </div>
+} @else {
+  <p>Unknown progression.</p>
+}
+

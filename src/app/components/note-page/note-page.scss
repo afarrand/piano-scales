@@ -1,0 +1,105 @@
+.note-nav {
+  max-width: 900px;
+  margin: 0 auto 1.5rem;
+
+  a {
+    color: #333;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.note-switch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+
+  h1 {
+    margin: 0;
+  }
+}
+
+.legend {
+  text-align: center;
+  margin: 0.5rem 0 0;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.legend-right,
+.legend-left {
+  font-weight: 600;
+}
+
+.progressions-link {
+  display: block;
+  text-align: center;
+  margin-top: 0.5rem;
+  color: #b4660a;
+  font-weight: 600;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.chord-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 1.25rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.chord-card {
+  background: #fafafa;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 1rem 1.25rem 1.25rem;
+
+  header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    margin-bottom: 0.75rem;
+
+    h2 {
+      margin: 0;
+      font-size: 1.4rem;
+    }
+
+    .roman {
+      font-weight: 700;
+      color: #888;
+    }
+
+    .quality {
+      margin-left: auto;
+      font-size: 0.8rem;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+  }
+}
+
+.voicing {
+  margin-top: 0.75rem;
+
+  h3 {
+    margin: 0 0 0.4rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #555;
+  }
+}
+
+.voicing.alternative {
+  border-top: 1px dashed #ddd;
+  padding-top: 0.6rem;
+}

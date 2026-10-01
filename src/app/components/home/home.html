@@ -1,0 +1,16 @@
+<section class="intro">
+  <h1>Piano Chords by Note</h1>
+  <p>
+    Pick a note to see its seven diatonic chords (I - vii°), each shown as a
+    piano diagram with highlighted keys and suggested fingering, plus
+    alternative inversions.
+  </p>
+  <a class="progressions-link" routerLink="/progressions/C">Browse popular chord progressions &rarr;</a>
+</section>
+
+<div class="note-grid">
+  @for (note of notes; track note) {
+    <a class="note-tile" [routerLink]="['/note', note]">{{ note }}</a>
+  }
+</div>
+

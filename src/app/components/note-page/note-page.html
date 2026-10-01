@@ -1,0 +1,40 @@
+<nav class="note-nav">
+  <a routerLink="/">&larr; All notes</a>
+  <div class="note-switch">
+    <a [routerLink]="['/note', previousNote()]">&laquo; {{ previousNote() }}</a>
+    <h1>{{ note() }} major chords</h1>
+    <a [routerLink]="['/note', nextNote()]">{{ nextNote() }} &raquo;</a>
+  </div>
+  <p class="legend">
+    Finger numbers: <span class="legend-right">top = right hand</span>,
+    <span class="legend-left">bottom = left hand</span>. Both hands play the same keys.
+  </p>
+  <a class="progressions-link" [routerLink]="['/progressions', note()]"
+    >Browse popular progressions in {{ note() }} &rarr;</a
+  >
+</nav>
+
+<div class="chord-list">
+  @for (chord of chords(); track chord.degree) {
+    <article class="chord-card">
+      <header>
+        <span class="roman">{{ chord.roman }}</span>
+        <h2>{{ chord.name }}</h2>
+        <span class="quality">{{ chord.quality }}</span>
+      </header>
+
+      <section class="voicing primary">
+        <h3>{{ chord.primary.label }} (primary fingering)</h3>
+        <app-piano-diagram [notes]="chord.primary.notes" />
+      </section>
+
+      @for (alt of chord.alternatives; track alt.label) {
+        <section class="voicing alternative">
+          <h3>{{ alt.label }} (alternative fingering)</h3>
+          <app-piano-diagram [notes]="alt.notes" />
+        </section>
+      }
+    </article>
+  }
+</div>
+
